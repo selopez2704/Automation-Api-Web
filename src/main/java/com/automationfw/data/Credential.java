@@ -11,7 +11,8 @@ public class Credential {
   private final String password;
 
   @JsonCreator
-  public Credential(@JsonProperty("type") String type ,@JsonProperty("username") String username, @JsonProperty("password") String password) {
+  public Credential(@JsonProperty("type") String type, @JsonProperty("username") String username,
+                    @JsonProperty("password") String password) {
     this.type = type;
     this.username = username;
     this.password = password;

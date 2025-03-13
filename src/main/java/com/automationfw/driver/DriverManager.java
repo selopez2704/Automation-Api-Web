@@ -1,4 +1,5 @@
 package com.automationfw.driver;
+
 import lombok.experimental.UtilityClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,7 +16,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 public class DriverManager {
   private static final ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
 
-  public static void createWebDriver(String browser){
+  public static void createWebDriver(String browser) {
     switch (browser.toLowerCase()) {
       case "chrome":
         ChromeOptions chromeOptions = new ChromeOptions();
@@ -34,7 +35,7 @@ public class DriverManager {
         driverThreadLocal.set(new FirefoxDriver());
         break;
       case "edge":
-        EdgeOptions edgeOptions =  new EdgeOptions();
+        EdgeOptions edgeOptions = new EdgeOptions();
         edgeOptions.addArguments("--incognito");
         edgeOptions.addArguments("--start-maximized");
         edgeOptions.addArguments("--disable-infobars");
@@ -45,13 +46,15 @@ public class DriverManager {
         throw new IllegalArgumentException("Browser not supported: " + browser);
     }
   }
-  public static WebDriver getDriver(){
+
+  public static WebDriver getDriver() {
     return driverThreadLocal.get();
   }
 
   public void openPage(String url) {
     getDriver().get(url);
   }
+
   public static void closeDriver() {
     WebDriver driver = getDriver();
     driver.quit();

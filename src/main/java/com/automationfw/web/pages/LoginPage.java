@@ -16,9 +16,9 @@ public class LoginPage extends WebBasePage {
   @FindBy(id = "login-button")
   private WebElement btnLogin;
 
-  public void login(String user, String password){
-    sendKeysToElement(txtUserName,user);
-    sendKeysToElement(txtPassword,password);
+  public void login(String user, String password) {
+    sendKeysToElement(txtUserName, user);
+    sendKeysToElement(txtPassword, password);
     clickOnElement(btnLogin);
   }
 

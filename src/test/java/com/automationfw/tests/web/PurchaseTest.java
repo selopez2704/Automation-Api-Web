@@ -17,7 +17,10 @@ public class PurchaseTest extends BaseTest {
     LoginPage loginPage = new LoginPage();
     loginPage.login(username, password);
     ProductsPage productsPage = new ProductsPage();
-    Assert.assertEquals(productsPage.getTitle().getText(),"Products", "Login fail the Products page is not displayed");
-
+    Assert.assertEquals(productsPage.getTitle().getText(), "Products",
+      "Login fail the Products page is not displayed");
+    String cheapestProductName = productsPage.getCheapestProductName();
+    productsPage.sortProductsLower2HighPrice();
+    productsPage.waitForElementVisibility(loginPage.getBtnLogin());
   }
 }

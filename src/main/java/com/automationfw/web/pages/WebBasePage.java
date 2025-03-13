@@ -1,6 +1,7 @@
 package com.automationfw.web.pages;
 
 import static com.automationfw.driver.DriverManager.getDriver;
+
 import com.automationfw.driver.Properties;
 import java.time.Duration;
 import lombok.extern.slf4j.Slf4j;
@@ -46,7 +47,7 @@ public class WebBasePage {
     try {
       wait.until(d -> element.isDisplayed());
     } catch (TimeoutException e) {
-      log.error("Element not visible {}",element.getText());
+      log.error("Element not visible {}", element.getText());
     } catch (Exception e) {
       log.error("Unexpected error while waiting for element visibility: {}", e.getMessage());
     }

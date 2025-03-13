@@ -1,17 +1,23 @@
 package com.automationfw.web.pages.components;
 
 
+import lombok.Getter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
-public class SortProductComponent extends WebBaseComponent{
+@Getter
+public class SortProductComponent extends WebBaseComponent {
 
-  @FindBy(className = "product-sort-container")
+  @FindBy(className = "select_container")
   private WebElement ddlSortProductElement;
-  Select ddlSortProductSelect = new Select(ddlSortProductElement);
+//  Select ddlSortProductSelect = new Select(ddlSortProductElement);
 
-  private void clickByLowPrice() {
-      ddlSortProductSelect.selectByContainsVisibleText("Price (low to high)");
+  @FindBy(xpath = "//option[contains(text(), 'Price (low to high)')]\n")
+  private WebElement ddlOptLowerPrice;
+
+  public void sortByLowPrice() {
+//    ddlSortProductSelect.selectByContainsVisibleText("Price (low to high)");
+    clickOnElement(ddlOptLowerPrice);
   }
 }

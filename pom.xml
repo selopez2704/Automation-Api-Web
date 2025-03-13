@@ -47,16 +47,6 @@
             <artifactId>jackson-databind</artifactId>
             <version>${jackson.databind.version}</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.apache.logging.log4j</groupId>-->
-<!--            <artifactId>log4j-core</artifactId>-->
-<!--            <version>${logging.log4j.version}</version>-->
-<!--        </dependency>-->
-<!--      <dependency>-->
-<!--        <groupId>org.apache.logging.log4j</groupId>-->
-<!--        <artifactId>log4j-slf4j-impl</artifactId>-->
-<!--        <version>${logging.log4j.version}</version>-->
-<!--      </dependency> -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
