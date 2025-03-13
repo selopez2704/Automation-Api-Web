@@ -22,10 +22,10 @@ public class LoginTest extends BaseTest {
       "Login fail the Products page is not displayed");
   }
 
-//  @Test(dataProvider = "locked-login", dataProviderClass = DataTestProvider.class)
-//  public void lockedLoginTest(String username, String password) {
-//    LoginPage loginPage = new LoginPage();
-//    loginPage.login(username, password);
-//    Assert.assertTrue(loginPage.isLoginFailed());
-//  }
+  @Test(dataProvider = "locked-login", dataProviderClass = DataTestProvider.class)
+  public void lockedLoginTest(String username, String password) {
+    LoginPage loginPage = new LoginPage();
+    loginPage.login(username, password);
+    Assert.assertTrue(loginPage.isLoginFailed());
+  }
 }

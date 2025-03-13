@@ -1,0 +1,36 @@
+<suite name="SauceDemoTests" parallel="methods" thread-count="2">
+    <listeners>
+        <listener class-name="com.automationfw.utils.ScreenshotErrorManager"/>
+    </listeners>
+
+    <test name="Purchase">
+        <classes>
+            <class name="com.automationfw.tests.web.PurchaseTest">
+                <methods>
+                    <include name="purchaseCheapestProductUsingInventoryFilters"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="validLogin" priority="1">
+        <classes>
+            <class name="com.automationfw.tests.web.LoginTest">
+                <methods>
+                    <include name="validLoginTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="lockedLogin" priority="2">
+        <classes>
+            <class name="com.automationfw.tests.web.LoginTest">
+                <methods>
+                    <include name="lockedLoginTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

@@ -1,6 +1,7 @@
 package com.automationfw.web.pages;
 
 import lombok.Getter;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -16,9 +17,8 @@ public class LoginPage extends WebBasePage {
   @FindBy(id = "login-button")
   private WebElement btnLogin;
 
-//  TODO: Create a Web Component
 //  @FindBy(className = "error-message-container error")
-//  private WebElement errorMessage;
+  private WebElement errorMessage;
 
   public void login(String user, String password) {
     sendKeysToElement(getTxtUserName(), user);
@@ -26,9 +26,10 @@ public class LoginPage extends WebBasePage {
     clickOnElement(getBtnLogin());
   }
 
-//  public Boolean isLoginFailed(){
-//    waitForElementVisibility(errorMessage);
-//    return errorMessage.isDisplayed();
-//  }
+  public Boolean isLoginFailed(){
+    errorMessage = getDriver().findElement(By.className("error-message-container"));
+    waitForElementVisibility(errorMessage);
+    return errorMessage.isDisplayed();
+  }
 
 }

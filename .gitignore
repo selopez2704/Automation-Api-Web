@@ -47,6 +47,7 @@ build/
 # Log file
 *.log
 * logs/browserstack-plugin.log
+* browserstack-plugin.log
 
 # BlueJ files
 *.ctxt
@@ -67,4 +68,5 @@ build/
 hs_err_pid*
 replay_pid*
 
-
+# Screenshots
+* screenshots*.png
