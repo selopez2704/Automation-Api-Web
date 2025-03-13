@@ -1,25 +1,33 @@
 package com.automationfw.web.pages;
 
-import static com.automationfw.driver.DriverManager.getDriver;
-
+import com.automationfw.driver.DriverManager;
 import com.automationfw.driver.Properties;
 import java.time.Duration;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 @Slf4j
+@Getter
 public class WebBasePage {
 
   private final WebDriver driver;
   private final WebDriverWait wait;
 
+  @FindBy(className = "title")
+  private WebElement title;
+
+  @FindBy(className = "shopping_cart_link")
+  private WebElement btnCart;
+
   public WebBasePage() {
-    this.driver = getDriver();
+    this.driver = DriverManager.getDriver();
     wait = new WebDriverWait(driver, Duration.ofSeconds(Properties.TEST_TIMEOUT));
     PageFactory.initElements(driver, this);
   }
@@ -51,6 +59,10 @@ public class WebBasePage {
     } catch (Exception e) {
       log.error("Unexpected error while waiting for element visibility: {}", e.getMessage());
     }
+  }
+
+  public void goToCart() {
+    clickOnElement(getBtnCart());
   }
 }
 

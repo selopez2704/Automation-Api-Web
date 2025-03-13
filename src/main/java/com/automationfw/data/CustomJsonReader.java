@@ -13,7 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @UtilityClass
 @Getter
-public class CredentialJsonReader {
+public class CustomJsonReader {
 
   public static Credential getJsonCredential(String type) throws IOException {
     try {
@@ -30,6 +30,22 @@ public class CredentialJsonReader {
         .orElse(null);
     } catch (java.io.IOException e) {
       log.error("Error while reading the credential file: {}", e.getMessage());
+    }
+    return null;
+  }
+
+  public static PersonalInformation getJsonPersonalInformation() throws IOException {
+    try {
+      ObjectMapper objectMapper = new ObjectMapper();
+//      TODO: create read property file
+      File credentialJsonFile =
+        new File("src/test/java/com/automationfw/resources/checkoutPersonalInfo.json");
+      List<PersonalInformation> personalInformations = objectMapper.readValue(credentialJsonFile,
+        new TypeReference<List<PersonalInformation>>() {
+        });
+      return personalInformations.get(0);
+    } catch (java.io.IOException e) {
+      log.error("Error while reading the checkout personal information file: {}", e.getMessage());
     }
     return null;
   }

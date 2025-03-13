@@ -1,6 +1,7 @@
 package com.automationfw.data;
 
-import static com.automationfw.data.CredentialJsonReader.getJsonCredential;
+import static com.automationfw.data.CustomJsonReader.getJsonCredential;
+import static com.automationfw.data.CustomJsonReader.getJsonPersonalInformation;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -33,6 +34,25 @@ public class DataTestProvider {
       return new Object[][] {
         {
           validCredentials.getUsername(), validCredentials.getPassword()
+        }
+      };
+    } else {
+      return new Object[0][0];
+    }
+  }
+
+  @DataProvider(name = "complete-purchase")
+  public static Object[][] testDataCompletePurchase() throws IOException {
+    Credential validCredentials = getJsonCredential("validCredentials");
+    PersonalInformation personalInformation = getJsonPersonalInformation();
+    if (!(Objects.isNull(validCredentials) && Objects.isNull(personalInformation))) {
+      return new Object[][] {
+        {
+          validCredentials.getUsername(),
+          validCredentials.getPassword(),
+          personalInformation.getFirstName(),
+          personalInformation.getLastName(),
+          personalInformation.getPostalCode()
         }
       };
     } else {

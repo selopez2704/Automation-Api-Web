@@ -16,10 +16,19 @@ public class LoginPage extends WebBasePage {
   @FindBy(id = "login-button")
   private WebElement btnLogin;
 
+//  TODO: Create a Web Component
+//  @FindBy(className = "error-message-container error")
+//  private WebElement errorMessage;
+
   public void login(String user, String password) {
-    sendKeysToElement(txtUserName, user);
-    sendKeysToElement(txtPassword, password);
-    clickOnElement(btnLogin);
+    sendKeysToElement(getTxtUserName(), user);
+    sendKeysToElement(getTxtPassword(), password);
+    clickOnElement(getBtnLogin());
   }
+
+//  public Boolean isLoginFailed(){
+//    waitForElementVisibility(errorMessage);
+//    return errorMessage.isDisplayed();
+//  }
 
 }

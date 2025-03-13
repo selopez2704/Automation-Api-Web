@@ -11,9 +11,6 @@ import org.openqa.selenium.support.FindBy;
 @Getter
 public class ProductsPage extends WebBasePage {
 
-  @FindBy(className = "title")
-  private WebElement title;
-
   @FindBy(className = "inventory_item_name")
   private List<WebElement> lblItemNames;
 
@@ -42,6 +39,10 @@ public class ProductsPage extends WebBasePage {
     Optional<Double> minValueOptional = listPrices.stream().min(Double::compareTo);
     int index = listPrices.indexOf(minValueOptional.get());
     return getLblItemNames().get(index).getText();
+  }
+
+  public void addFirstProductToCart() {
+    clickOnElement(getBtnItemAddToCart().get(0));
   }
 }
 
