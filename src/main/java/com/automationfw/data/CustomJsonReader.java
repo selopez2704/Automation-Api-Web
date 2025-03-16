@@ -20,7 +20,7 @@ public class CustomJsonReader {
       ObjectMapper objectMapper = new ObjectMapper();
 //      TODO: create read property file
       File credentialJsonFile =
-        new File("src/test/java/com/automationfw/resources/loginCredentials.json");
+        new File("src/test/resources/data/loginCredentials.json");
       List<Credential> credentials = objectMapper.readValue(credentialJsonFile,
         new TypeReference<List<Credential>>() {
         });
@@ -39,7 +39,7 @@ public class CustomJsonReader {
       ObjectMapper objectMapper = new ObjectMapper();
 //      TODO: create read property file
       File credentialJsonFile =
-        new File("src/test/java/com/automationfw/resources/checkoutPersonalInfo.json");
+        new File("src/test/resources/data/checkoutPersonalInfo.json");
       List<PersonalInformation> personalInformations = objectMapper.readValue(credentialJsonFile,
         new TypeReference<List<PersonalInformation>>() {
         });

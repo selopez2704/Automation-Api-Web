@@ -13,16 +13,17 @@ import org.testng.annotations.Test;
 @Slf4j
 public class LoginTest extends BaseTest {
 
-  @Test(dataProvider = "valid-login", dataProviderClass = DataTestProvider.class)
+  @Test(priority = 1, dataProvider = "valid-login", dataProviderClass = DataTestProvider.class)
   public void validLoginTest(String username, String password) {
     LoginPage loginPage = new LoginPage();
     loginPage.login(username, password);
     ProductsPage productsPage = new ProductsPage();
+    log.info("this message should be displayed");
     Assert.assertEquals(productsPage.getTitle().getText(), PRODUCT_PAGE_TITLE.getName(),
       "Login fail the Products page is not displayed");
   }
 
-  @Test(dataProvider = "locked-login", dataProviderClass = DataTestProvider.class)
+  @Test(priority = 2, dataProvider = "locked-login", dataProviderClass = DataTestProvider.class)
   public void lockedLoginTest(String username, String password) {
     LoginPage loginPage = new LoginPage();
     loginPage.login(username, password);

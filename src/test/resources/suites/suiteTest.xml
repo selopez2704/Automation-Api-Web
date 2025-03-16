@@ -13,7 +13,7 @@
         </classes>
     </test>
 
-    <test name="validLogin" priority="1">
+    <test name="validLogin">
         <classes>
             <class name="com.automationfw.tests.web.LoginTest">
                 <methods>
@@ -23,7 +23,7 @@
         </classes>
     </test>
 
-    <test name="lockedLogin" priority="2">
+    <test name="lockedLogin">
         <classes>
             <class name="com.automationfw.tests.web.LoginTest">
                 <methods>

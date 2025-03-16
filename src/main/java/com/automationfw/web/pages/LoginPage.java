@@ -17,7 +17,7 @@ public class LoginPage extends WebBasePage {
   @FindBy(id = "login-button")
   private WebElement btnLogin;
 
-//  @FindBy(className = "error-message-container error")
+  @FindBy(className = "error-message-container")
   private WebElement errorMessage;
 
   public void login(String user, String password) {
@@ -27,7 +27,7 @@ public class LoginPage extends WebBasePage {
   }
 
   public Boolean isLoginFailed(){
-    errorMessage = getDriver().findElement(By.className("error-message-container"));
+//    errorMessage = getDriver().findElement(By.className("error-message-container"));
     waitForElementVisibility(errorMessage);
     return errorMessage.isDisplayed();
   }
