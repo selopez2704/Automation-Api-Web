@@ -7,7 +7,7 @@ import static com.automationfw.data.Constants.PRODUCT_PAGE_TITLE;
 import static com.automationfw.data.Constants.CART_PAGE_TITLE;
 
 import com.automationfw.data.DataTestProvider;
-import com.automationfw.tests.BaseTest;
+import com.automationfw.tests.WebBaseTest;
 import com.automationfw.web.pages.CartPage;
 import com.automationfw.web.pages.CheckoutCompletePage;
 import com.automationfw.web.pages.CheckoutOverviewPage;
@@ -19,7 +19,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 @Slf4j
-public class PurchaseTest extends BaseTest {
+public class PurchaseTest extends WebBaseTest {
 
 
   @Test(dataProvider = "complete-purchase", dataProviderClass = DataTestProvider.class)

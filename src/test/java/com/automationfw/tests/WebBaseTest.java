@@ -10,9 +10,10 @@ import java.time.Duration;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-public class BaseTest {
+public class WebBaseTest {
 
   @BeforeMethod
+
   public void testSetup() {
     createWebDriver(Properties.BROWSER);
     DriverManager.getDriver()

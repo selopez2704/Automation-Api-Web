@@ -1,0 +1,12 @@
+<suite name="PokeApiTests" parallel="methods" thread-count="2">
+    <test name="GET pokemon">
+        <classes>
+            <class name="com.automationfw.tests.api.PokemonTest">
+                <methods>
+                    <include name="getPokemonSuccessTest"/>
+                    <include name="getPokemonBadResquestTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
