@@ -3,7 +3,7 @@ package com.automationfw.tests.web;
 import static com.automationfw.data.Constants.PRODUCT_PAGE_TITLE;
 
 import com.automationfw.data.DataTestProvider;
-import com.automationfw.tests.BaseTest;
+import com.automationfw.tests.WebBaseTest;
 import com.automationfw.web.pages.LoginPage;
 import com.automationfw.web.pages.ProductsPage;
 import lombok.extern.slf4j.Slf4j;
@@ -11,7 +11,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 @Slf4j
-public class LoginTest extends BaseTest {
+public class LoginTest extends WebBaseTest {
 
   @Test(priority = 1, dataProvider = "valid-login", dataProviderClass = DataTestProvider.class)
   public void validLoginTest(String username, String password) {
