@@ -12,6 +12,7 @@ This project aims to create an automation framework that allows for the executio
 - **BDD Tool:** Cucumber
 - **Environment Management:** Docker
 - **Continuous Integration:** Jenkins
+- **Reporting:** Allure
 
 ## Framework Objectives
 
