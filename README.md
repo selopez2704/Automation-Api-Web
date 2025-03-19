@@ -22,8 +22,26 @@ This project aims to create an automation framework that allows for the executio
 - Configure multiple browsers (Chrome, Firefox, Edge) for testing.
 - Implement Jenkins for CI/CD, sending notifications to Slack upon test completion.
 
-## TODO: Project Structure
+## Project Structure
 
+- **LICENSE**
+- **README.md**
+- **allure-results/**
+- **logs/**
+- **pom.xml**
+- **src/**
+  - **main/**
+    - **java/**
+      - **com/**
+  - **test/**
+    - **java/**
+      - **com/**
+    - **resources/**
+      - **data/**
+      - **properties/**
+      - **suites/**
+    - **screenshots/**
+- **target/**
 
 ## Environment Requirements
 
