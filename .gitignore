@@ -45,8 +45,8 @@ build/
 *.class
 
 # Log file
-*.log
-* logs/browserstack-plugin.log
+*.log/
+logs/browserstack-plugin.log
 * browserstack-plugin.log
 
 # BlueJ files
@@ -69,4 +69,7 @@ hs_err_pid*
 replay_pid*
 
 # Screenshots
-* screenshots*.png
+screenshots/
+
+#Allure report
+allure-results/
