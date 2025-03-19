@@ -3,7 +3,6 @@ package com.automationfw.tests.web;
 import static com.automationfw.data.Constants.PRODUCT_PAGE_TITLE;
 
 import com.automationfw.data.DataTestProvider;
-import com.automationfw.tests.WebBaseTest;
 import com.automationfw.web.pages.LoginPage;
 import com.automationfw.web.pages.ProductsPage;
 import lombok.extern.slf4j.Slf4j;

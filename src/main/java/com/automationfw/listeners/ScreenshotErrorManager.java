@@ -1,4 +1,4 @@
-package com.automationfw.utils;
+package com.automationfw.listeners;
 
 import com.automationfw.driver.DriverManager;
 import java.io.IOException;
@@ -25,7 +25,7 @@ public class ScreenshotErrorManager implements ITestListener {
     TakesScreenshot ts = (TakesScreenshot) DriverManager.getDriver();
     File source = ts.getScreenshotAs(OutputType.FILE);
     String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-    File destination = new File("src/test/screenshots-" + testName + timeStamp+ ".png");
+    File destination = new File("src/test/screenshots/screenshots-" + testName + timeStamp+ ".png");
 
     try {
       Files.copy(source.toPath(), destination.toPath(), StandardCopyOption.REPLACE_EXISTING);

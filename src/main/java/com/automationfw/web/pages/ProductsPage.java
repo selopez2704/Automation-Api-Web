@@ -1,6 +1,7 @@
 package com.automationfw.web.pages;
 
 import com.automationfw.web.pages.components.SortProductComponent;
+import io.qameta.allure.Step;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -26,6 +27,7 @@ public class ProductsPage extends WebBasePage {
     clickOnElement(ddlSortProduct.getDdlSortProductElement());
   }
 
+  @Step("Sort products from lower to higher price")
   public void sortProductsLower2HighPrice() {
     displaySortDropdown();
     getDdlSortProduct().sortByLowPrice();
@@ -41,6 +43,7 @@ public class ProductsPage extends WebBasePage {
     return getLblItemNames().get(index).getText();
   }
 
+  @Step("Add first product to cart")
   public void addFirstProductToCart() {
     clickOnElement(getBtnItemAddToCart().get(0));
   }

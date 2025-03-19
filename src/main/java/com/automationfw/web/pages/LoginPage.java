@@ -1,5 +1,6 @@
 package com.automationfw.web.pages;
 
+import io.qameta.allure.Step;
 import lombok.Getter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -20,6 +21,7 @@ public class LoginPage extends WebBasePage {
   @FindBy(className = "error-message-container")
   private WebElement errorMessage;
 
+  @Step("Login to the website")
   public void login(String user, String password) {
     sendKeysToElement(getTxtUserName(), user);
     sendKeysToElement(getTxtPassword(), password);
