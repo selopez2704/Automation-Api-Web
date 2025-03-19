@@ -4,6 +4,7 @@ import static com.automationfw.data.Constants.BASE_URI;
 import static com.automationfw.data.Constants.CONTENT_TYPE;
 import static com.automationfw.data.Constants.VALUE_CONTENT_TYPE;
 
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import java.util.HashMap;
@@ -25,7 +26,7 @@ public class BaseRequest {
 
   protected Response requestGet(String endpoint, Map<String, ?> headers, String pathParameter) {
     try {
-      return RestAssured.given()
+      return RestAssured.given().filter(new AllureRestAssured())
         .contentType(VALUE_CONTENT_TYPE.getName())
         .headers(headers)
         .when()
