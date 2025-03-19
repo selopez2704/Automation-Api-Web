@@ -1,7 +1,7 @@
 package com.automationfw.web.pages;
 
 import com.automationfw.driver.DriverManager;
-import com.automationfw.driver.Properties;
+import com.automationfw.data.Properties;
 import java.time.Duration;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;

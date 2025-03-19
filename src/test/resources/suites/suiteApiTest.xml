@@ -1,7 +1,7 @@
 <suite name="PokeApiTests" parallel="methods" thread-count="2">
     <test name="GET pokemon">
         <classes>
-            <class name="com.automationfw.tests.api.PokemonTest">
+            <class name="com.automationfw.tests.api.PokemonApiTest">
                 <methods>
                     <include name="getPokemonSuccessTest"/>
                     <include name="getPokemonBadResquestTest"/>

@@ -7,13 +7,13 @@ import static com.automationfw.data.Constants.PRODUCT_PAGE_TITLE;
 import static com.automationfw.data.Constants.CART_PAGE_TITLE;
 
 import com.automationfw.data.DataTestProvider;
-import com.automationfw.tests.WebBaseTest;
 import com.automationfw.web.pages.CartPage;
 import com.automationfw.web.pages.CheckoutCompletePage;
 import com.automationfw.web.pages.CheckoutOverviewPage;
 import com.automationfw.web.pages.CheckoutYourInformationPage;
 import com.automationfw.web.pages.LoginPage;
 import com.automationfw.web.pages.ProductsPage;
+import io.qameta.allure.Step;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -21,7 +21,7 @@ import org.testng.annotations.Test;
 @Slf4j
 public class PurchaseTest extends WebBaseTest {
 
-
+  @Step("purchase the cheapest product")
   @Test(dataProvider = "complete-purchase", dataProviderClass = DataTestProvider.class)
   public void purchaseCheapestProductUsingInventoryFilters(String username, String password,
                                                            String firstName, String lastName,

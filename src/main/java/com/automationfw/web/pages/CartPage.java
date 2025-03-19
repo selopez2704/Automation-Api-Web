@@ -1,5 +1,6 @@
 package com.automationfw.web.pages;
 
+import io.qameta.allure.Step;
 import java.util.List;
 import lombok.Getter;
 import org.openqa.selenium.WebElement;
@@ -14,6 +15,7 @@ public class CartPage extends WebBasePage {
   @FindBy(id = "checkout")
   private WebElement btnCheckout;
 
+  @Step("Go to checkout personal information")
   public void goToCheckoutYourInformation() {
     clickOnElement(btnCheckout);
   }
