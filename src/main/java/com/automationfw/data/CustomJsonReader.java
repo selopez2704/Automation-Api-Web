@@ -1,6 +1,9 @@
 package com.automationfw.data;
 
 
+import static com.automationfw.data.Properties.CHECKOUT_PERSONAL_INFORMATION_PATH;
+import static com.automationfw.data.Properties.CREDENTIALS_PATH;
+
 import com.fasterxml.jackson.core.type.TypeReference;
 import java.io.File;
 import java.io.IOException;
@@ -18,9 +21,8 @@ public class CustomJsonReader {
   public static Credential getJsonCredential(String type) throws IOException {
     try {
       ObjectMapper objectMapper = new ObjectMapper();
-//      TODO: create read property file
       File credentialJsonFile =
-        new File("src/test/resources/data/loginCredentials.json");
+        new File(CREDENTIALS_PATH);
       List<Credential> credentials = objectMapper.readValue(credentialJsonFile,
         new TypeReference<List<Credential>>() {
         });
@@ -37,9 +39,8 @@ public class CustomJsonReader {
   public static PersonalInformation getJsonPersonalInformation() throws IOException {
     try {
       ObjectMapper objectMapper = new ObjectMapper();
-//      TODO: create read property file
       File credentialJsonFile =
-        new File("src/test/resources/data/checkoutPersonalInfo.json");
+        new File(CHECKOUT_PERSONAL_INFORMATION_PATH);
       List<PersonalInformation> personalInformations = objectMapper.readValue(credentialJsonFile,
         new TypeReference<List<PersonalInformation>>() {
         });

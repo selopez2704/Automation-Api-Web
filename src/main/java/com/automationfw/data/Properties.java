@@ -12,5 +12,9 @@ public class Properties {
   public static final String CREDENTIALS_PATH =
     PropertiesManager.getPropertyValue("credential.path");
   public static final String CHECKOUT_PERSONAL_INFORMATION_PATH =
-    PropertiesManager.getPropertyValue("checkout.personalinfo");
+    PropertiesManager.getPropertyValue("checkout.personalinfo.path");
+  public static final String SCREENSHOT_PATH =
+    PropertiesManager.getPropertyValue("screenshots.path");
+  public static final String ALLURE_REPORT_PATH =
+    PropertiesManager.getPropertyValue("allure.report.path");
 }

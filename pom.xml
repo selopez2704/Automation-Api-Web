@@ -23,6 +23,7 @@
         <maven.compiler.target>17</maven.compiler.target>
         <aspectj.version>1.9.8</aspectj.version>
         <allure.version>2.29.1</allure.version>
+        <apache.io.version>2.18.0</apache.io.version>
         <suiteXmlFiles>suiteTest.xml</suiteXmlFiles>
     </properties>
 
@@ -72,6 +73,11 @@
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-rest-assured</artifactId>
             <version>${allure.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${apache.io.version}</version>
         </dependency>
     </dependencies>
 

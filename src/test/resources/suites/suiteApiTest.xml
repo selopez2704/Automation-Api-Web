@@ -1,10 +1,13 @@
 <suite name="PokeApiTests" parallel="methods" thread-count="2">
+    <listeners>
+        <listener class-name="com.automationfw.listeners.AllureResultsCleaner"/>
+    </listeners>
     <test name="GET pokemon">
         <classes>
             <class name="com.automationfw.tests.api.PokemonApiTest">
                 <methods>
                     <include name="getPokemonSuccessTest"/>
-                    <include name="getPokemonBadResquestTest"/>
+                    <include name="getPokemonBadRequestTest"/>
                 </methods>
             </class>
         </classes>

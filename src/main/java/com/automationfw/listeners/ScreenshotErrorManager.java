@@ -1,5 +1,7 @@
 package com.automationfw.listeners;
 
+import static com.automationfw.data.Properties.SCREENSHOT_PATH;
+
 import com.automationfw.driver.DriverManager;
 import io.qameta.allure.Allure;
 import java.io.ByteArrayInputStream;
@@ -29,8 +31,7 @@ public class ScreenshotErrorManager implements ITestListener {
     TakesScreenshot ts = (TakesScreenshot) DriverManager.getDriver();
     File source = ts.getScreenshotAs(OutputType.FILE);
     String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-//    TODO: property for path
-    File destination = new File("src/test/screenshots/screenshot-" + testName + timeStamp+ ".png");
+    File destination = new File(SCREENSHOT_PATH + "/screenshot-" + testName + timeStamp + ".png");
 
     try {
       Files.copy(source.toPath(), destination.toPath(), StandardCopyOption.REPLACE_EXISTING);
