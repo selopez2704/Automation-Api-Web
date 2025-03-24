@@ -11,11 +11,11 @@ public class PropertiesManager {
   private static PropertiesManager instance;
   private static final Properties properties = new Properties();
 
-  public PropertiesManager(String filePath){
+  public PropertiesManager(String filePath) {
     loadProperties(filePath);
   }
 
-  public static synchronized PropertiesManager getInstance(String filePath){
+  public static synchronized PropertiesManager getInstance(String filePath) {
     if (instance == null) {
       instance = new PropertiesManager(filePath);
     }
@@ -33,9 +33,9 @@ public class PropertiesManager {
     }
   }
 
-  public static String getPropertyValue(String key){
+  public static String getPropertyValue(String key) {
     String value = getPropertyFromEnv(key);
-    if (value == null){
+    if (value == null) {
       value = getConfigProperty(key);
     }
     return value;
@@ -49,7 +49,7 @@ public class PropertiesManager {
     return System.getenv(formatAsEnvVar(key));
   }
 
-  public static String getConfigProperty(String key){
+  public static String getConfigProperty(String key) {
     return getProperty(key);
   }
 

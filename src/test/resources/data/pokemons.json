@@ -1,0 +1,10 @@
+[
+  {
+    "requestType": "valid",
+    "name": "pikachu"
+  },
+  {
+    "requestType": "invalid",
+    "name": "INvalid-Pokemon"
+  }
+]

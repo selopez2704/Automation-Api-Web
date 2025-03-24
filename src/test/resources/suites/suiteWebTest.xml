@@ -1,6 +1,6 @@
 <suite name="SauceDemoTests" parallel="methods" thread-count="2">
     <listeners>
-        <listener class-name="com.automationfw.listeners.ScreenshotErrorManager"/>
+        <listener class-name="com.automationfw.listeners.TestListeners"/>
         <listener class-name="com.automationfw.listeners.AllureResultsCleaner"/>
     </listeners>
 

@@ -7,7 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 @Slf4j
-public class PokemonApiTest extends ApiBaseTest{
+public class PokemonApiTest extends ApiBaseTest {
 
   @Test
   public void getPokemonSuccessTest() {

@@ -2,61 +2,30 @@ package com.automationfw.data;
 
 import static com.automationfw.data.CustomJsonReader.getJsonCredential;
 import static com.automationfw.data.CustomJsonReader.getJsonPersonalInformation;
+import static com.automationfw.data.CustomJsonReader.getJsonPokemons;
 
-import java.io.IOException;
 import java.util.Objects;
+import java.util.Optional;
 import lombok.experimental.UtilityClass;
 import lombok.extern.slf4j.Slf4j;
-import org.testng.annotations.DataProvider;
 
 @Slf4j
 @UtilityClass
 public class DataTestProvider {
 
-  @DataProvider(name = "valid-login")
-  public static Object[][] testDataValidLogIn() throws IOException {
-    Credential validCredentials = getJsonCredential("validCredentials");
-    if (!Objects.isNull(validCredentials)) {
-      return new Object[][] {
-        {
-          validCredentials.getUsername(), validCredentials.getPassword()
-        }
-      };
-    } else {
-      return new Object[0][0];
-    }
+
+  public static Credential getDataLogIn(String key) {
+    return getJsonCredential(key + "Credentials");
   }
 
-  @DataProvider(name = "locked-login")
-  public static Object[][] testDataLockedLogIn() throws IOException {
-    Credential validCredentials = getJsonCredential("lockedCredentials");
-    if (!Objects.isNull(validCredentials)) {
-      return new Object[][] {
-        {
-          validCredentials.getUsername(), validCredentials.getPassword()
-        }
-      };
-    } else {
-      return new Object[0][0];
-    }
+  public static PersonalInformation getDataCompletePurchase() {
+    return getJsonPersonalInformation();
   }
 
-  @DataProvider(name = "complete-purchase")
-  public static Object[][] testDataCompletePurchase() throws IOException {
-    Credential validCredentials = getJsonCredential("validCredentials");
-    PersonalInformation personalInformation = getJsonPersonalInformation();
-    if (!(Objects.isNull(validCredentials) && Objects.isNull(personalInformation))) {
-      return new Object[][] {
-        {
-          validCredentials.getUsername(),
-          validCredentials.getPassword(),
-          personalInformation.getFirstName(),
-          personalInformation.getLastName(),
-          personalInformation.getPostalCode()
-        }
-      };
-    } else {
-      return new Object[0][0];
-    }
+  public static Pokemon getDataPokemons(String type) {
+    Optional<Pokemon> pokemon = Objects.requireNonNull(getJsonPokemons()).stream()
+      .filter(poke -> poke.getRequestType().equals(type))
+      .findFirst();
+    return pokemon.get();
   }
 }
