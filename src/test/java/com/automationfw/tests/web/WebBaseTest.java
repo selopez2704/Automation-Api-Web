@@ -15,7 +15,7 @@ import org.testng.annotations.BeforeSuite;
 public class WebBaseTest {
 
   @BeforeSuite
-  public void suiteSetup(){
+  public void suiteSetup() {
     PropertiesManager.getInstance("properties/common.properties");
   }
 
@@ -30,7 +30,7 @@ public class WebBaseTest {
   }
 
   @AfterMethod(alwaysRun = true)
-  public void teardown() {
+  public void tearDown() {
     closeDriver();
   }
 }

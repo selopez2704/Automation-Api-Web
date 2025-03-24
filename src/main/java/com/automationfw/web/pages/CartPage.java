@@ -15,9 +15,4 @@ public class CartPage extends WebBasePage {
   @FindBy(id = "checkout")
   private WebElement btnCheckout;
 
-  @Step("Go to checkout personal information")
-  public void goToCheckoutYourInformation() {
-    clickOnElement(btnCheckout);
-  }
-
 }

@@ -20,18 +20,4 @@ public class LoginPage extends WebBasePage {
 
   @FindBy(className = "error-message-container")
   private WebElement errorMessage;
-
-  @Step("Login to the website")
-  public void login(String user, String password) {
-    sendKeysToElement(getTxtUserName(), user);
-    sendKeysToElement(getTxtPassword(), password);
-    clickOnElement(getBtnLogin());
-  }
-
-  public Boolean isLoginFailed(){
-//    errorMessage = getDriver().findElement(By.className("error-message-container"));
-    waitForElementVisibility(errorMessage);
-    return errorMessage.isDisplayed();
-  }
-
 }

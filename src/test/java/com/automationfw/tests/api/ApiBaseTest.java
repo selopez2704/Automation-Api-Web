@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeSuite;
 public class ApiBaseTest {
 
   @BeforeSuite
-  public void suiteSetup(){
+  public void suiteSetup() {
     PropertiesManager.getInstance("properties/common.properties");
   }
 

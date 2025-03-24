@@ -24,6 +24,7 @@
         <aspectj.version>1.9.8</aspectj.version>
         <allure.version>2.29.1</allure.version>
         <apache.io.version>2.18.0</apache.io.version>
+        <cucumber.version>7.21.1</cucumber.version>
         <suiteXmlFiles>suiteTest.xml</suiteXmlFiles>
     </properties>
 
@@ -78,6 +79,21 @@
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
             <version>${apache.io.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-cucumber7-jvm</artifactId>
+            <version>${allure.version}</version>
         </dependency>
     </dependencies>
 

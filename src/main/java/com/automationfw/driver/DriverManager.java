@@ -56,8 +56,7 @@ public class DriverManager {
   }
 
   public static void closeDriver() {
-    WebDriver driver = getDriver();
-    driver.quit();
+    getDriver().quit();
     driverThreadLocal.remove();
   }
 }
