@@ -25,7 +25,7 @@
         <allure.version>2.29.1</allure.version>
         <apache.io.version>2.18.0</apache.io.version>
         <cucumber.version>7.21.1</cucumber.version>
-        <suiteXmlFiles>suiteTest.xml</suiteXmlFiles>
+        <suiteXmlFiles>suite.xml</suiteXmlFiles>
     </properties>
 
     <dependencies>
@@ -128,7 +128,7 @@
                     <testFailureIgnore>false</testFailureIgnore>
                     <!--suppress UnresolvedMavenProperty -->
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/test/java/com/automationfw/suites/${suiteXmlFiles}</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/suites/${suiteXmlFiles}</suiteXmlFile>
                     </suiteXmlFiles>
                     <includes>
                         <include>**/**.java</include>
