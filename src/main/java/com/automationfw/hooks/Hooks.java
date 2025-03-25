@@ -57,8 +57,8 @@ public class Hooks {
   public void tearDownWeb(Scenario scenario) {
     if (scenario.isFailed()) {
       log.error("scenario failed: {}", scenario.getName());
-//      byte[] screenshot = takeScreenshot();
-//      attachScreenshot(screenshot);
+      byte[] screenshot = takeScreenshot();
+      attachScreenshot(screenshot);
     }
     DriverManager.closeDriver();
   }
