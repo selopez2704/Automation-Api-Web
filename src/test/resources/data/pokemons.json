@@ -4,7 +4,31 @@
     "name": "pikachu"
   },
   {
+    "requestType": "valid",
+    "name": "squirtle"
+  },
+  {
+    "requestType": "valid",
+    "name": "garchomp"
+  },
+  {
+    "requestType": "valid",
+    "name": "lucario"
+  },
+  {
     "requestType": "invalid",
     "name": "INvalid-Pokemon"
+  },
+  {
+    "requestType": "uppercase",
+    "name": "CHArizARD"
+  },
+  {
+    "requestType": "uppercase",
+    "name": "EeVEe"
+  },
+  {
+    "requestType": "uppercase",
+    "name": "Palkia"
   }
 ]

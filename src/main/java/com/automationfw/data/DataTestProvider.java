@@ -4,8 +4,9 @@ import static com.automationfw.data.CustomJsonReader.getJsonCredential;
 import static com.automationfw.data.CustomJsonReader.getJsonPersonalInformation;
 import static com.automationfw.data.CustomJsonReader.getJsonPokemons;
 
+import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
+import java.util.Random;
 import lombok.experimental.UtilityClass;
 import lombok.extern.slf4j.Slf4j;
 
@@ -23,9 +24,9 @@ public class DataTestProvider {
   }
 
   public static Pokemon getDataPokemons(String type) {
-    Optional<Pokemon> pokemon = Objects.requireNonNull(getJsonPokemons()).stream()
+    List<Pokemon> pokemons = Objects.requireNonNull(getJsonPokemons()).stream()
       .filter(poke -> poke.getRequestType().equals(type))
-      .findFirst();
-    return pokemon.get();
+      .toList();
+    return pokemons.get(new Random().nextInt(pokemons.size()));
   }
 }

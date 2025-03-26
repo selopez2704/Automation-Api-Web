@@ -21,7 +21,7 @@ public class CheckoutYourInformationStepsDefinitions {
   }
 
   @And("I go to checkout overview")
-  public void goToCheckoutYourInformation() {
+  public void goToCheckoutOverview() {
     checkoutYourInformationTasks.goToCheckOverview();
   }
 }
