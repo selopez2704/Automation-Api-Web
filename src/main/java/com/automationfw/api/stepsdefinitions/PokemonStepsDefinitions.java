@@ -10,8 +10,8 @@ import io.cucumber.java.en.Then;
 import io.restassured.response.Response;
 
 public class PokemonStepsDefinitions {
-  PokemonResquestTask pokemonResquestTask = new PokemonResquestTask();
-  PokemonResquestQuestions pokemonResquestQuestions = new PokemonResquestQuestions();
+  private final PokemonResquestTask pokemonResquestTask = new PokemonResquestTask();
+  private final PokemonResquestQuestions pokemonResquestQuestions = new PokemonResquestQuestions();
 
   @Given("I send a (.*) GET request for a pokemon name$")
   public void getRequestPokemonName(String requestGetType) {

@@ -35,10 +35,10 @@ public class TestListeners implements ITestListener, IExecutionListener {
 
   @Override
   public void onTestFailure(ITestResult result) {
-    byte[] screenshotByte = takeScreenshot(result.getName());
-    attachScreenshot(screenshotByte);
-    Allure.addAttachment("Screenshot", "image/png",
-      new ByteArrayInputStream(screenshotByte), "png");
+//    byte[] screenshotByte = takeScreenshot(result.getName());
+//    attachScreenshot(screenshotByte);
+//    Allure.addAttachment("Screenshot", "image/png",
+//      new ByteArrayInputStream(screenshotByte), "png");
   }
 
   @Attachment(value = "Screenshot", type = "image/png")

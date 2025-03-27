@@ -17,6 +17,6 @@ public class CheckoutYourInformationPage extends WebBasePage {
   @FindBy(id = "postal-code")
   private WebElement txtPostalCode;
 
-  @FindBy(id = "continueERROR!!!!!")
+  @FindBy(id = "continue")
   private WebElement btnContinue;
 }

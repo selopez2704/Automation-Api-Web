@@ -1,12 +1,8 @@
 package com.automationfw.runner;
 
-import com.automationfw.driver.DriverManager;
 import com.automationfw.listeners.TestListeners;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 
