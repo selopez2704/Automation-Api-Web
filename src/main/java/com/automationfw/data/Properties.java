@@ -30,4 +30,7 @@ public class Properties {
     PropertiesManager.getPropertyValue("screenshots.path");
   public static final String ALLURE_REPORT_PATH =
     PropertiesManager.getPropertyValue("allure.report.path");
+  public static final String SELENIUM_HUB_URL =
+    PropertiesManager.getPropertyValue("selenium.hub.url");
+
 }

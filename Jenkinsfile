@@ -1,26 +1,38 @@
 pipeline {
     agent any
-
+    environment {
+        MAVEN_OPTS = '-Xmx1024m'
+    }
     stages {
-        stage('Build') {
+        stage('Install Dependencies') {
             steps {
-                // Compile project
-                sh 'mvn clean package -DskipTests'
+                sh 'mvn clean install -DskipTests'
             }
         }
-
-        stage('Test') {
+        stage('Run Tests') {
             steps {
-                // Run test
-                sh 'mvn test'
+                sh 'mvn test -Dcucumber.filter.tags="@Pokeapi" -DsuiteXmlFile=src/test/resources/suites/suite.xml'
+            }
+        }
+        stage('Archive Allure Results') {
+            steps {
+                allure([
+                    includeProperties: false,
+                    jdk: '',
+                    results: [[path: 'target/allure-results']]
+                ])
             }
         }
     }
-
     post {
         always {
-            // Archive artifacts
-            archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+            echo 'Pipeline Complete'
+        }
+        success {
+            echo 'Execution Successful'
+        }
+        failure {
+            echo 'Execution Failed'
         }
     }
 }

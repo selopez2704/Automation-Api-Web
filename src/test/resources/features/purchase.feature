@@ -2,7 +2,6 @@
 
 Feature: Purchase
 
-  @this
   Scenario: Verify that the user can purchase the cheapest product available in the store
     Given I Login with valid credentials
     And I should be able to see the products page
