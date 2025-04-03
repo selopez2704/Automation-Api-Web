@@ -11,7 +11,8 @@ pipeline {
         }
         stage('Run Tests') {
             steps {
-                sh 'mvn test -Dcucumber.filter.tags="(@SouceDemo)" -DsuiteXmlFile=src/test/resources/suites/suite.xml'
+                sh 'echo mvn test -Dcucumber.filter.tags="(@Pokeapi) and (@SouceDemo)" -DsuiteXmlFile=src/test/resources/suites/suite.xml'
+                sh 'mvn test -Dcucumber.filter.tags="@SouceDemo" -DsuiteXmlFile=src/test/resources/suites/suite.xml'
             }
         }
         stage('Archive Allure Results') {
